@@ -1,6 +1,7 @@
 def mutate(x):
     x.append(3)
 
+
 a = [1, 2]
 mutate(a)
 
