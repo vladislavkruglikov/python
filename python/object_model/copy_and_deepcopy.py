@@ -23,3 +23,12 @@ assert id(a[1]) == id(b[1])
 
 # So both have references to the same list
 assert a[1][0] == b[1][0]
+
+# In contract deep copy recreates immutable objects but for mutable it just copies 
+# them since it is safe.
+import copy
+
+a = [7, [1, 2]]
+b = copy.deepcopy(a)
+assert id(a[0]) == id(b[0])
+assert id(a[1]) != id(b[1])
